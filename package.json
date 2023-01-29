@@ -2,7 +2,7 @@
   "name": "aop_logger",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
@@ -12,8 +12,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^4.9.4"
   }
 }
