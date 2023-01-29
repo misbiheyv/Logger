@@ -1,0 +1,19 @@
+{
+  "name": "aop_logger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "tsc && node --es-module-specifier-resolution=node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
