@@ -1,32 +1,55 @@
-import Logger from "./Logger";
-
-@Logger.warn.write(
-    "*",
-    [
-        ['before', 'class before'],
-        ['after', 'class after'],
-    ],
-)
-class MyMath {
-    @Logger.error.write([
-        ['before', 'method before'],
-        ['after', 'method after']
-    ])
-    public sum(a: number, b: number) {
+import {inject} from "./helpers";
+class Foo {
+    sum(a: number, b: number) {
         return a + b;
     }
 
-    @Logger.log.write([
-        ['before', 'method before'],
-        ['after', 'method after']
-    ])
-    public multiply(a: number, b: number) {
+    multiply(a: number, b: number) {
         return a * b;
     }
 }
+let foo = new Foo();
+let target = 0;
 
-const o = new MyMath();
+inject(foo, "sum", [
+    ['around', () => target++],
+])
 
-o.sum(1, 2);
+foo.multiply(1, 2)
+console.log(target)
+foo.sum(1, 2)
+console.log(target)
 
-o.multiply(1, 2);
+
+// import Logger from "./Logger";
+//
+// @Logger.warn.write(
+//     "*",
+//     [
+//         ['before', 'class before'],
+//         ['after', 'class after'],
+//     ],
+// )
+// class MyMath {
+//     @Logger.error.write([
+//         ['before', 'method before'],
+//         ['after', 'method after']
+//     ])
+//     public sum(a: number, b: number) {
+//         return a + b;
+//     }
+//
+//     @Logger.log.write([
+//         ['before', 'method before'],
+//         ['after', 'method after']
+//     ])
+//     public multiply(a: number, b: number) {
+//         return a * b;
+//     }
+// }
+//
+// const o = new MyMath();
+//
+// o.sum(1, 2);
+//
+// o.multiply(1, 2);

@@ -6,6 +6,7 @@
     "target": "esNext",
     "moduleResolution": "node",
     "outDir": "dist",
+    "esModuleInterop": true
   },
   "include": [
     "src"

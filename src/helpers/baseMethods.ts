@@ -13,7 +13,7 @@ export function replaceMethod(
     { target, methodName, advice, aspect } : {
         target: ObjectLike,
         methodName: PropertyKey,
-        advice: string,
+        advice: Advice,
         aspect: Function
     }
 ) {
@@ -37,7 +37,6 @@ export function inject(target: any, methods: PropertyKey | PropertyKey[], advice
         ? target.prototype
         : Object.getPrototypeOf(target);
 
-
     let methodNames: PropertyKey[] = target.prototype != null
         ? getMethodNamesFromFunction(target)
         : getMethodNamesFromObject(target);
@@ -47,6 +46,8 @@ export function inject(target: any, methods: PropertyKey | PropertyKey[], advice
     } else if (methods != null && methods != '*') {
         methodNames = methodNames.filter(name => methods === name);
     }
+
+    console.log(methodNames)
 
     for (const methodName of methodNames) {
         for (const [advice, aspect] of adviceAspect) {

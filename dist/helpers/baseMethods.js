@@ -30,6 +30,7 @@ export function inject(target, methods, adviceAspect) {
     else if (methods != null && methods != '*') {
         methodNames = methodNames.filter(name => methods === name);
     }
+    console.log(methodNames);
     for (const methodName of methodNames) {
         for (const [advice, aspect] of adviceAspect) {
             replaceMethod({ target: replaceTarget, methodName, aspect, advice });
