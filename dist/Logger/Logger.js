@@ -1,5 +1,5 @@
-import { inject, replaceMethod } from "./baseMethods";
-import { cast } from "./helpers";
+import { inject, replaceMethod } from "../helpers";
+import { cast } from "../helpers";
 export default class Logger {
     static aspect;
     static get log() {

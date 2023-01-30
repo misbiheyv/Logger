@@ -1,4 +1,4 @@
-import Logger from "./AOP/Logger";
+import Logger from "./Logger";
 
 @Logger.warn.write(
     "*",

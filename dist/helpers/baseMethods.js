@@ -1,7 +1,7 @@
-export const getMethodNamesFromObject = (obj) => Object
+const getMethodNamesFromObject = (obj) => Object
     .getOwnPropertyNames(Object.getPrototypeOf(obj))
     .filter(name => typeof Object.getPrototypeOf(obj)[name] === 'function');
-export const getMethodNamesFromFunction = (obj) => Object
+const getMethodNamesFromFunction = (obj) => Object
     .getOwnPropertyNames(obj.prototype)
     .filter(name => typeof obj.prototype[name] === 'function');
 export function replaceMethod({ target, methodName, advice, aspect }) {

@@ -1,10 +1,11 @@
-import type { ObjectLike, Advice } from "./interface";
+import type { ObjectLike } from "../interface";
+import { Advice } from "../Logger";
 
-export const getMethodNamesFromObject: (...args: any[]) => PropertyKey[] = (obj: any) => Object
+const getMethodNamesFromObject: (...args: any[]) => PropertyKey[] = (obj: any) => Object
     .getOwnPropertyNames(Object.getPrototypeOf(obj))
     .filter(name => typeof Object.getPrototypeOf(obj)[name] === 'function');
 
-export const getMethodNamesFromFunction: (...args: any[]) => PropertyKey[] = (obj: any) => Object
+const getMethodNamesFromFunction: (...args: any[]) => PropertyKey[] = (obj: any) => Object
     .getOwnPropertyNames(obj.prototype)
     .filter(name => typeof obj.prototype[name] === 'function');
 
