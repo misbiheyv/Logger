@@ -79,7 +79,7 @@ class MathExpressions {
 
 const m = new MathExpressions();
 
-log(m, 'sum', [['around', 'sum']])
+log(m, 'sum', [['replace', 'sum']])
 
-m.sum(1, 2) // >> sum, sum
+m.sum(1, 2) // console.log('sum')
 ```
