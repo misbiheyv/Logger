@@ -79,7 +79,7 @@ class MathExpressions {
 
 const m = new MathExpressions();
 
-log(m, 'sum', [['replace', 'sum']])
+log(m, 'sum', [['replace', 'sum is deleted']], 'error')
 
-m.sum(1, 2) // console.log('sum')
+m.sum(1, 2) // error: sum is deleted
 ```
